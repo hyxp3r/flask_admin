@@ -1,0 +1,38 @@
+[tool.poetry]
+name = "ic-system"
+version = "0.1.0"
+description = ""
+authors = ["Evgeniy Ermakov <erma2001@mail.ru>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+sqlalchemy = {extras = ["asyncio"], version = "^2.0.25"}
+
+
+[tool.poetry.group.dev.dependencies]
+pep8-naming = "^0.13.3"
+isort = "^5.13.2"
+mypy = "^1.8.0"
+black = "^24.1.1"
+unify = "^0.5"
+flake8-awesome = "1.2.1"
+flake8-logging-format = "^0.9.0"
+setuptools = "^69.0.3"
+asyncpg = "^0.29.0"
+asyncio = "^3.4.3"
+python-dotenv = "^1.0.1"
+fastapi = "^0.109.0"
+flask = "^3.0.1"
+flask-admin = "^1.6.1"
+alembic = "^1.13.1"
+
+[tool.black]
+line-length = 120
+target-version = ['py37']
+skip-string-normalization = true
+exclude = ".*db/versions"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
