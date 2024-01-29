@@ -26,12 +26,15 @@ fastapi = "^0.109.0"
 flask = "^3.0.1"
 flask-admin = "^1.6.1"
 alembic = "^1.13.1"
+pydantic-settings = "^2.1.0"
+sqlalchemy-utils = "^0.41.1"
+psycopg2 = "^2.9.9"
 
 [tool.black]
 line-length = 120
-target-version = ['py37']
+target-version = ['py311']
 skip-string-normalization = true
-exclude = ".*db/versions"
+exclude = ".db/*"
 
 [build-system]
 requires = ["poetry-core"]

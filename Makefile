@@ -18,3 +18,17 @@ pretty:
 	$(VENV)/bin/black --target-version py311 --skip-string-normalization $(CODE)
 	$(VENV)/bin/isort $(CODE)
 	$(VENV)/bin/unify --in-place --recursive $(CODE)
+
+lint_windows:
+	$(VENV)/Scripts/black --check $(CODE)
+	$(VENV)/Scripts/flake8 --jobs $(JOBS) --statistics $(CODE)
+	$(VENV)/Scripts/mypy --config-file mypy.ini $(CODE)
+
+pretty_windows:
+	$(VENV)/Scripts/black --target-version py311 --skip-string-normalization $(CODE)
+	$(VENV)/Scripts/isort $(CODE)
+	$(VENV)/Scripts/unify --in-place --recursive $(CODE)
+
+
+run-admin:
+	poetry run python -m admin.app
